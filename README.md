@@ -16,29 +16,29 @@ ENVIRONMENT: Ruby 1.9.3, Rails 3.2.13
    invoke the XHR GET request and display the response.
 
    # app/views/products/index.html.erb
-   <p><a href="#" id="monthly">Get Product of the Month</a></p>
-   <p id="tgtTag">resonse here</p>
+   &lt;p>&lt;a href="#" id="monthly">Get Product of the Month&lt;/a>&lt;/p>
+   &lt;p id="tgtTag">resonse here&lt;/p>
 
 4. Create a new XHR script to make a GET request for the product of the month
    to a specific url that returns a text response.
 
-  # app/assests/javascripts/monthly.js
-  window.onload = function(){
-    var a = document.getElementById('monthly');
-    var tgtTag = document.getElementById('tgtTag');
+# app/assests/javascripts/monthly.js
+window.onload = function(){
+  var a = document.getElementById('monthly');
+  var tgtTag = document.getElementById('tgtTag');
    
-    a.addEventListener('click', function(e){
-      var xhr = new XMLHttpRequest();
-      xhr.open('GET', 'products/monthly');
-      xhr.onreadystatechange = function(){
-        if(xhr.readyState == 4 && xhr.status === 200){
-          tgtTag.innerHTML = xhr.responseText;
-        }
-      };
-      e.preventDefault();
-      xhr.send(null);
-    });
-  };
+  a.addEventListener('click', function(e){
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', 'products/monthly');
+    xhr.onreadystatechange = function(){
+      if(xhr.readyState == 4 && xhr.status === 200){
+        tgtTag.innerHTML = xhr.responseText;
+      }
+    };
+    e.preventDefault();
+    xhr.send(null);
+  });
+};
 
 5. Add a new action to the products controller to grab the first product
    of the month and .
