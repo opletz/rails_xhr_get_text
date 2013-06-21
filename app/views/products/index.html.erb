@@ -1,0 +1,30 @@
+<h1>Listing products</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Monthly</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @products.each do |product| %>
+  <tr>
+    <td><%= product.title %></td>
+    <td><%= product.description %></td>
+    <td><%= product.monthly %></td>
+    <td><%= link_to 'Show', product %></td>
+    <td><%= link_to 'Edit', edit_product_path(product) %></td>
+    <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Product', new_product_path %>
+
+<p><a href="#" id="monthly">Get Product of the Month</a></p>
+<p id="tgtTag">response here</p>

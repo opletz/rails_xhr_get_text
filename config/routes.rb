@@ -1,4 +1,8 @@
 RailsXhrGetText::Application.routes.draw do
+  match 'products/monthly' => 'products#monthly', format: :text
+  resources :products
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
