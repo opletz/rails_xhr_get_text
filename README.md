@@ -40,16 +40,16 @@
     5. Add a new action to the products controller to grab the first product of the month.  
 
 >\# app/controllers/products_controller.rb  
->def monthly
->  @products = Product.find_by_monthly('t')
+>def monthly  
+>  @products = Product.find_by_monthly('t')  
 >   
->  respond_to do |format|
->    format.html # index.html.erb
->    format.text { render text: @products.title }
->    format.js   {}
->    format.json { render json: @products }
->  end
->end
+>  respond_to do |format|  
+>    format.html # index.html.erb  
+>    format.text { render text: @products.title }  
+>    format.js   {}  
+>    format.json { render json: @products }  
+>  end  
+>end  
 
     6. Add a new route for products/monthly that specifically responds with text  
     \# config/routes.rb  
