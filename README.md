@@ -2,26 +2,26 @@
 ## ENVIRONMENT: Ruby 1.9.3, Rails 3.2.13
 
 
-    ##1. Create a new project
->
-    rails new rails_xhr_get_text
+    1. Create a new project
 
-    ##2. Generate a new scaffold and run the migration
+>rails new rails_xhr_get_text  
 
-    **rails generate scaffold product title:string description:text monthly:boolean**
-    **rake db:migrate**
+    2. Generate a new scaffold and run the migration  
 
-    ##3. Add a hyperlink and paragraph tag to bottom of the products index page to invoke the XHR GET request and display the response.
+>rails generate scaffold product title:string description:text monthly:boolean  
+>rake db:migrate  
 
-    \# app/views/products/index.html.erb
-    &lt;p>&lt;a href="#" id="monthly">Get Product of the Month&lt;/a>&lt;/p>
-    &lt;p id="tgtTag">resonse here&lt;/p>
+    3. Add a hyperlink and paragraph tag to bottom of the products index page to invoke the XHR GET request and display the response.  
 
-    ##4. Create a new XHR script to make a GET request for the product of the month to a specific url that returns a text response.
->
-    \# app/assests/javascripts/monthly.js
-    window.onload = function()\{
-    var a = document.getElementById('monthly');
+>   # app/views/products/index.html.erb
+    <p>&lt;a href="#" id="monthly">Get Product of the Month</a></p>
+    <p id="tgtTag">resonse here</p>
+
+    4. Create a new XHR script to make a GET request for the product of the month to a specific url that returns a text response.   
+
+>   \# app/assests/javascripts/monthly.js  
+    window.onload = function(){  
+      var a = document.getElementById('monthly');  
     var tgtTag = document.getElementById('tgtTag');
 
     a.addEventListener('click', function(e)\{
