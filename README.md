@@ -39,7 +39,7 @@
 
     5. Add a new action to the products controller to grab the first product of the month.  
 
->\# app/controllers/products_controller.rb
+>\# app/controllers/products_controller.rb  
 >def monthly
 >  @products = Product.find_by_monthly('t')
 >   
