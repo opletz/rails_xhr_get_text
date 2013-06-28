@@ -11,13 +11,13 @@ class ProductsController < ApplicationController
   end
 
   def monthly 
-    @products = Product.find_by_monthly('t')
+    @product = Product.find_by_monthly(true)
 
     respond_to do |format|
-      format.html # index.html.erb
-      format.text { render text: @products.title }
+      format.html { render text: @product.title }
+      format.text { render text: @product.title }
       format.js   {}
-      format.json { render json: @products }
+      format.json { render json: @product }
     end
   end
 

@@ -1,5 +1,5 @@
 RailsXhrGetText::Application.routes.draw do
-  match 'products/monthly' => 'products#monthly', format: :text
+  match 'products/monthly' => 'products#monthly'
   resources :products
 
 
