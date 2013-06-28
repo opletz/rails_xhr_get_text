@@ -1,5 +1,5 @@
-#XHR GET REQUEST with a text response in Rails
-## ENVIRONMENT: Ruby 1.9.3, Rails 3.2.13
+XHR GET REQUEST with a text response in Rails
+(ENVIRONMENT: Ruby 1.9.3, Rails 3.2.13)
 
 
     1. Create a new project
@@ -41,19 +41,19 @@
 
 >\# app/controllers/products_controller.rb  
 >def monthly  
->  @products = Product.find_by_monthly('t')  
+>  @product = Product.find_by_monthly(true)  
 >   
 >  respond_to do |format|  
->    format.html # index.html.erb  
->    format.text { render text: @products.title }  
+>    format.html { render text: @product.title }
+>    format.text { render text: @product.title }  
 >    format.js   {}  
->    format.json { render json: @products }  
+>    format.json { render json: @product }  
 >  end  
 >end  
 
     6. Add a new route for products/monthly that specifically responds with text  
     \# config/routes.rb  
->   match 'products/monthly' => 'products#monthly', format: :text  
+>   match 'products/monthly' => 'products#monthly'
 
     7. Launch the Rails server, navigate to the products index page(http://localhost:3000/products) and add some products with at least one marked as "monthly".   
     8. Click the link on the products index page to get the product of the month.  
